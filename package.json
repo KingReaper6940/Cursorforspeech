@@ -1,75 +1,207 @@
 {
-  "name": "speech-to-text-prompt",
-  "displayName": "Speech to Text Prompt",
-  "description": "Voice-activated prompt writing with speech-to-text transcription",
-  "version": "1.0.0",
+  "name": "cursorforspeech",
+  "displayName": "Cursor for Speech - Voice to Text",
+  "description": "🎤 Local, WebGPU-powered voice-to-text capabilities directly into the Cursor editor using Hugging Face Transformers.",
+  "version": "2.0.0",
   "publisher": "your-publisher-name",
+  "author": {
+    "name": "Your Name",
+    "url": "https://github.com/your-username/cursorforspeech"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/your-username/cursorforspeech",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/cursorforspeech.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/cursorforspeech/issues"
+  },
+  "icon": "make me a icon for a voice to text thing.jpg",
   "engines": {
     "vscode": "^1.74.0"
   },
   "categories": [
-    "Other"
+    "Other",
+    "Machine Learning"
   ],
   "keywords": [
-    "speech",
     "voice",
+    "speech",
     "transcription",
-    "prompt",
     "whisper",
-    "speech-to-text"
+    "ai",
+    "cursor",
+    "voice-to-text",
+    "speech-recognition"
   ],
   "activationEvents": [
-    "onCommand:speechToText.startVoicePrompt"
+    "onStartupFinished"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "speechToText.startVoicePrompt",
-        "title": "Start Voice Prompt",
-        "icon": "$(mic)"
+        "command": "cursorforspeech.toggleRecording",
+        "title": "Toggle Voice Recording",
+        "category": "Cursor for Speech"
+      },
+      {
+        "command": "cursorforspeech.openVoicePanel",
+        "title": "Open Voice Panel",
+        "category": "Cursor for Speech"
+      },
+      {
+        "command": "cursorforspeech.selectLanguage",
+        "title": "Select Voice Recognition Language",
+        "category": "Cursor for Speech"
       }
     ],
     "keybindings": [
       {
-        "command": "speechToText.startVoicePrompt",
-        "key": "ctrl+shift+v",
-        "mac": "cmd+shift+v"
+        "command": "cursorforspeech.toggleRecording",
+        "key": "cmd+shift+s",
+        "mac": "cmd+shift+s",
+        "when": "editorTextFocus"
       }
     ],
-    "menus": {
-      "editor/title": [
-        {
-          "command": "speechToText.startVoicePrompt",
-          "when": "editorTextFocus",
-          "group": "navigation"
+    "configuration": {
+      "title": "Cursor for Speech",
+      "properties": {
+        "cursorforspeech.language": {
+          "type": "string",
+          "default": "auto",
+          "enum": [
+            "auto",
+            "english",
+            "chinese",
+            "german",
+            "spanish",
+            "russian",
+            "korean",
+            "french",
+            "japanese",
+            "portuguese",
+            "turkish",
+            "polish",
+            "catalan",
+            "dutch",
+            "arabic",
+            "swedish",
+            "italian",
+            "indonesian",
+            "hindi",
+            "finnish",
+            "vietnamese",
+            "hebrew",
+            "ukrainian",
+            "greek",
+            "malay",
+            "czech",
+            "romanian",
+            "danish",
+            "hungarian",
+            "tamil",
+            "norwegian",
+            "thai",
+            "urdu",
+            "croatian",
+            "bulgarian",
+            "lithuanian",
+            "latin",
+            "maori",
+            "malayalam",
+            "welsh",
+            "slovak",
+            "telugu",
+            "persian",
+            "latvian",
+            "bengali",
+            "serbian",
+            "azerbaijani",
+            "slovenian",
+            "kannada",
+            "estonian",
+            "macedonian",
+            "breton",
+            "basque",
+            "icelandic",
+            "armenian",
+            "nepali",
+            "mongolian",
+            "bosnian",
+            "kazakh",
+            "albanian",
+            "swahili",
+            "galician",
+            "maltese",
+            "punjabi",
+            "afrikaans",
+            "georgian",
+            "belarusian",
+            "sindhi",
+            "gujarati",
+            "amharic",
+            "yiddish",
+            "lao",
+            "uzbek",
+            "faroese",
+            "haitian creole",
+            "pashto",
+            "turkmen",
+            "nynorsk",
+            "marathi",
+            "luxembourgish",
+            "myanmar",
+            "tibetan",
+            "khmer",
+            "tatar",
+            "malagasy",
+            "assamese",
+            "bashkir",
+            "javanese",
+            "sundanese",
+            "cantonese"
+          ],
+          "description": "Language for voice recognition"
+        },
+        "cursorforspeech.maxTokens": {
+          "type": "number",
+          "default": 128,
+          "minimum": 1,
+          "maximum": 512,
+          "description": "Maximum tokens for ASR output"
+        },
+        "cursorforspeech.autoInsertInEditor": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically insert transcribed text into the active editor"
         }
-      ],
-      "editor/context": [
-        {
-          "command": "speechToText.startVoicePrompt",
-          "when": "editorTextFocus",
-          "group": "1_modification"
-        }
-      ]
+      }
     }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./"
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "package": "vsce package",
+    "publish": "vsce publish"
   },
   "devDependencies": {
     "@types/vscode": "^1.74.0",
     "@types/node": "16.x",
-    "typescript": "^4.9.4"
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "eslint": "^8.28.0",
+    "typescript": "^4.9.4",
+    "@vscode/test-electron": "^2.2.0",
+    "@vscode/vsce": "^2.19.0",
+    "esbuild": "^0.25.2"
   },
   "dependencies": {
-    "@xenova/transformers": "^2.6.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/your-username/speech-to-text-prompt"
-  },
-  "license": "MIT"
+    "@huggingface/transformers": "3.5.0"
+  }
 }

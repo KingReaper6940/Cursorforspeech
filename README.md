@@ -1,200 +1,180 @@
-# 🎤 Cursor Speech-to-Text Extension
+# <p align="center"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/People/Speaking%20Head.webp" alt="Speaking Head" width="128" height="128" /><br/> Cursor for Speech - VS Code Extension </p>
 
-A VS Code/Cursor extension that adds speech-to-text functionality for writing prompts directly in the editor using voice commands. Perfect for dictating prompts, code comments, and documentation hands-free!
+🎤 Local, WebGPU-powered voice-to-text capabilities directly into the Cursor/VS Code editor using the power of Hugging Face Transformers.
 
-![GitHub](https://img.shields.io/badge/license-MIT-blue.svg)
-![VS Code](https://img.shields.io/badge/VS%20Code-Extension-blue.svg)
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)
+[![VS Code Marketplace](https://img.shields.io/badge/VS%20Code-Extension-blue?style=for-the-badge&logo=visual-studio-code)](https://marketplace.visualstudio.com/)
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/avarayr)
 
-## Features
+## ✨ Features
 
-- 🎤 **Voice-activated prompting**: Speak directly into your editor
-- 🤖 **Local AI transcription**: Uses Whisper model for accurate speech recognition
-- 🌐 **Web Speech API fallback**: Ensures compatibility across different environments
-- 📍 **Cursor-aware insertion**: Text appears exactly where your cursor is positioned
-- 📊 **Visual feedback**: Status bar indicator shows recording state
-- ⌨️ **Keyboard shortcut**: Quick access via `Ctrl+Shift+V` (or `Cmd+Shift+V` on Mac)
-- 🔒 **Privacy-focused**: All transcription happens locally, no data sent to servers
+- 🎙️ **LOCAL VOICE TRANSCRIPTION:** Transcribe your speech directly into the editor using the power of Hugging Face Transformers (Whisper model).
+- 🔒 **IN-BROWSER PROCESSING:** All transcription happens _locally_ in your editor. No data sent to external servers (besides downloading the model initially).
+- 🖱️ **SEAMLESS INTEGRATION:** Native VS Code extension with status bar integration and webview panel.
+- ⌨️ **HOTKEY SUPPORT:** Use `Cmd+Shift+Y` (Mac) or `Ctrl+Shift+Y` (Windows/Linux) to toggle recording.
+- 🌍 **MULTI-LANGUAGE:** Support for 60+ languages including auto-detection.
+- ⚙️ **CONFIGURABLE:** Customize language, auto-insertion, and other settings.
 
-## 🚀 Installation
+## 🚀 Installation Guide
 
-### Quick Start (From GitHub)
+### Option 1: From VS Code Marketplace (Recommended)
 
-1. **Clone this repository**:
+1. Open VS Code/Cursor
+2. Go to Extensions (`Cmd+Shift+X` or `Ctrl+Shift+X`)
+3. Search for "Cursor for Speech"
+4. Click "Install"
+
+### Option 2: Install from VSIX
+
+1. **Download the VSIX file** from the releases page
+2. **Install via VS Code:**
+   - Open Command Palette (`Cmd+Shift+P` or `Ctrl+Shift+P`)
+   - Run: `Extensions: Install from VSIX...`
+   - Select the `cursorforspeech-2.0.0.vsix` file
+
+### Option 3: Build from Source
+
+1. **Clone the Repository**
    ```bash
-   git clone https://github.com/your-username/Cursorforspeech.git
-   cd Cursorforspeech
+   git clone https://github.com/your-username/cursorforspeech.git
+   cd cursorforspeech
    ```
 
-2. **Install dependencies**:
+2. **Install Dependencies**
    ```bash
    npm install
    ```
 
-3. **Compile the extension**:
+3. **Compile and Package**
    ```bash
    npm run compile
+   npm run package
    ```
 
-4. **Test the extension**:
-   - Open this folder in VS Code/Cursor
-   - Press `F5` to launch Extension Development Host
-   - The extension will be active in the new window
-
-### Install as VSIX Package
-
-1. **Build the package**:
+4. **Install the generated VSIX**
    ```bash
-   npm install -g vsce
-   vsce package
+   code --install-extension cursorforspeech-2.0.0.vsix
    ```
 
-2. **Install in VS Code/Cursor**:
-   ```bash
-   code --install-extension speech-to-text-prompt-1.0.0.vsix
-   # or for Cursor:
-   cursor --install-extension speech-to-text-prompt-1.0.0.vsix
-   ```
+## 🛠️ How to Use
 
-## Usage
+### Quick Start
+1. 🎤 Click the **"🎤 Speech"** button in the status bar (bottom right)
+2. ⏳ The first time, the AI model needs to download (please wait a moment)
+3. 🔴 Click the microphone button to **start recording**
+4. 🗣️ Speak clearly
+5. ⏹️ Click again to **stop recording**
+6. ⌨️ Your transcribed text will appear in the active editor!
 
-### Starting Voice Transcription
+### Available Commands
+- **`Cursor for Speech: Toggle Voice Recording`** - Start/stop voice recording
+- **`Cursor for Speech: Open Voice Panel`** - Open the voice control panel
+- **`Cursor for Speech: Select Voice Recognition Language`** - Choose transcription language
 
-There are multiple ways to start voice transcription:
+### Hotkeys
+- `Cmd+Shift+S` (Mac) or `Ctrl+Shift+S` (Windows/Linux) - Toggle recording
 
-1. **🎯 Editor Toolbar Button** (NEW!): 
-   - Look for the microphone (🎤) icon in the top-right of your editor
-   - Click it to start/stop recording
+### Voice Panel
+Access the full-featured voice panel via:
+- Command Palette: `Cursor for Speech: Open Voice Panel`
+- Status bar button (right-click for menu)
 
-2. **⌨️ Keyboard Shortcut**: 
-   - Press `Ctrl+Shift+V` (or `Cmd+Shift+V` on Mac)
+The panel provides:
+- Visual recording controls with real-time feedback
+- Language selection (60+ supported languages)
+- Auto-insertion toggle
+- Recording status and help
 
-3. **📝 Right-Click Menu**: 
-   - Right-click in any editor and select "Start Voice Prompt"
+## ⚙️ Configuration
 
-4. **📊 Status Bar**: 
-   - Click the prominent microphone icon in the status bar (bottom right)
+Open VS Code Settings (`Cmd+,` or `Ctrl+,`) and search for "Cursor for Speech" to configure:
 
-5. **🎮 Command Palette**: 
-   - Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac)
-   - Type "Start Voice Prompt" and press Enter
+- **Language:** Set the default transcription language (default: auto-detect)
+- **Max Tokens:** Maximum length of transcription output (default: 128)
+- **Auto Insert:** Automatically insert transcribed text into the active editor (default: true)
 
-### Recording Process
+## 🖥️ Compatibility
 
-1. **Grant Permissions**: On first use, your browser will request microphone access
-2. **Start Speaking**: Once recording begins, speak clearly into your microphone
-3. **Stop Recording**: Click the status bar item again or wait for automatic stop
-4. **View Results**: Transcribed text will be inserted at your cursor position
+- ✅ **VS Code/Cursor:** 1.74.0+
+- ✅ **WebGPU Required:** For optimal performance (may work with fallback on some systems)
+- ✅ **Operating Systems:**
+  - macOS (Apple Silicon & Intel)
+  - Windows 10/11
+  - Linux (Ubuntu, Fedora, etc.)
 
-### Status Bar Indicators
+## 🌍 Supported Languages
 
-- `🎤 Ready` - Extension is ready to record
-- `🎤 Recording... (Click to stop)` - Currently recording audio
-- `🎤 Transcribing with Whisper...` - Processing audio with local AI
-- `🎤 Transcribing with Web Speech API...` - Using browser fallback
+Auto-detect and 60+ languages including:
+- English, Chinese, German, Spanish, French
+- Japanese, Korean, Russian, Portuguese, Italian
+- Arabic, Hindi, Dutch, Swedish, Norwegian
+- And many more...
 
-## Technology Stack
-
-### Primary: Whisper Model (@xenova/transformers)
-- **Accuracy**: High-quality local transcription
-- **Privacy**: No data leaves your machine
-- **Languages**: Optimized for English (whisper-tiny.en model)
-- **Performance**: Runs efficiently in the browser
-
-### Fallback: Web Speech API
-- **Compatibility**: Works when Whisper model can't load
-- **Speed**: Real-time transcription
-- **Limitations**: Requires internet connection and browser support
-
-## Requirements
-
-- VS Code version 1.74.0 or higher
-- Modern browser with microphone support
-- Microphone access permissions
-
-### Browser Compatibility
-
-- ✅ Chrome/Chromium-based browsers
-- ✅ Firefox
-- ✅ Safari (with Web Speech API)
-- ✅ Edge
-
-## Troubleshooting
+## 🔧 Troubleshooting
 
 ### Common Issues
 
+**"WebGPU not supported"**
+- Ensure you're using a modern browser/editor version
+- Check if hardware acceleration is enabled
+- Try updating your graphics drivers
+
 **"Microphone access denied"**
-- Grant microphone permissions in your browser
-- Check VS Code/Cursor settings for media permissions
+- Grant microphone permissions in your system settings
+- Restart VS Code/Cursor after granting permissions
 
-**"Whisper model failed to load"**
-- The extension will automatically fallback to Web Speech API
-- Ensure you have a stable internet connection for the initial model download
+**"Model loading takes too long"**
+- First-time model download can take 1-5 minutes depending on connection
+- Subsequent uses will be much faster (model is cached)
 
-**"No speech detected"**
-- Speak clearly and ensure your microphone is working
-- Check your system's audio input settings
-- Try speaking closer to the microphone
+**"No transcription output"**
+- Ensure you're speaking clearly and loudly enough
+- Check that your microphone is working in other applications
+- Try adjusting the language setting if auto-detect isn't working
 
-**"Web Speech API not supported"**
-- Update to a modern browser version
-- Use Chrome/Edge for best compatibility
+### Development/Debug Mode
 
-### Performance Tips
+1. Open the extension development host:
+   ```bash
+   code --extensionDevelopmentPath=./path/to/yap-for-cursor
+   ```
 
-- First-time Whisper model loading may take 30-60 seconds
-- Subsequent uses will be much faster as the model is cached
-- For best results, speak in a quiet environment
+2. Open Developer Tools (`Cmd+Option+I` or `F12`) to see console logs
 
-## Configuration
+## 🤝 Contributing
 
-Currently, the extension works out-of-the-box with sensible defaults. Future versions may include:
+We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-- Language selection
-- Model size options (tiny/base/small)
-- Custom keyboard shortcuts
-- Audio quality settings
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## Contributing
-
-Contributions are welcome! Please feel free to submit issues or pull requests.
-
-### Development Setup
-
-1. Clone the repository
-2. Run `npm install`
-3. Open in VS Code
-4. Press `F5` to start debugging
-
-### Building
-
-```bash
-# Compile TypeScript
-npm run compile
-
-# Watch for changes
-npm run watch
-
-# Package for distribution
-vsce package
-```
-
-## License
+## 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Acknowledgments
+## ❤️ Support The Project
 
-- [Xenova/transformers](https://github.com/xenova/transformers.js) - For the excellent Whisper implementation
-- [OpenAI Whisper](https://openai.com/research/whisper) - For the underlying speech recognition model
-- VS Code team - For the excellent extension API
+If you find `cursorforspeech` helpful, consider supporting the developer!
 
-## Changelog
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/avarayr)
 
-### 1.0.0
-- Initial release
-- Whisper model integration
-- Web Speech API fallback
-- Status bar integration
-- Keyboard shortcuts
-- Command palette integration
+---
+
+## 🔄 Migration from Yap for Cursor
+
+If you were using the previous "Yap for Cursor" extension:
+
+1. **Uninstall the old setup:**
+   - Remove the custom CSS imports from your VS Code settings
+   - Disable/uninstall the "Custom CSS and JS Loader" extension
+   - Run `Disable Custom CSS and JS` command if you had it enabled
+
+2. **Install this extension** following the installation guide above
+
+3. **Enjoy the improved experience** with native VS Code integration!
+
+---
+
+[![Star History Chart](https://api.star-history.com/svg?repos=your-username/cursorforspeech&type=Date)](https://www.star-history.com/#your-username/cursorforspeech&Date)
