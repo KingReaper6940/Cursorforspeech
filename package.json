@@ -1,21 +1,23 @@
 {
   "name": "cursorforspeech",
   "displayName": "Cursor for Speech - Voice to Text",
-  "description": "🎤 Local, WebGPU-powered voice-to-text capabilities directly into the Cursor editor using Hugging Face Transformers.",
-  "version": "2.0.0",
-  "publisher": "your-publisher-name",
+  "description": "🎤 Local, WebGPU-powered voice-to-text capabilities directly into the Cursor editor using Hugging Face Transformers. Created by Vrishn Viswa Sathyamoorthy.",
+  "version": "3.0.1",
+  "publisher": "KingReaper96420",
   "author": {
-    "name": "Your Name",
-    "url": "https://github.com/your-username/cursorforspeech"
+    "name": "Vrishn Viswa Sathyamoorthy",
+    "email": "vrishnviswasathyamoorthy@gmail.com",
+    "url": "https://github.com/KingReaper96420/cursorforspeech",
+    "phone": "+1 9148795242"
   },
   "license": "MIT",
-  "homepage": "https://github.com/your-username/cursorforspeech",
+  "homepage": "https://github.com/KingReaper96420/cursorforspeech",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/cursorforspeech.git"
+    "url": "https://github.com/KingReaper96420/cursorforspeech.git"
   },
   "bugs": {
-    "url": "https://github.com/your-username/cursorforspeech/issues"
+    "url": "https://github.com/KingReaper96420/cursorforspeech/issues"
   },
   "icon": "make me a icon for a voice to text thing.jpg",
   "engines": {
@@ -44,6 +46,7 @@
       {
         "command": "cursorforspeech.toggleRecording",
         "title": "Toggle Voice Recording",
+        "icon": "$(mic)",
         "category": "Cursor for Speech"
       },
       {
@@ -60,11 +63,22 @@
     "keybindings": [
       {
         "command": "cursorforspeech.toggleRecording",
-        "key": "cmd+shift+s",
-        "mac": "cmd+shift+s",
+        "key": "ctrl+shift+v",
+        "mac": "cmd+shift+v",
         "when": "editorTextFocus"
       }
     ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "cursorforspeech.toggleRecording",
+          "when": "editorTextFocus && !editorIsReadonly",
+          "group": "navigation@1",
+          "alt": "cursorforspeech.openVoicePanel",
+          "icon": "$(mic)"
+        }
+      ]
+    },
     "configuration": {
       "title": "Cursor for Speech",
       "properties": {

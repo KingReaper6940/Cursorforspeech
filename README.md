@@ -2,15 +2,20 @@
 
 🎤 Local, WebGPU-powered voice-to-text capabilities directly into the Cursor/VS Code editor using the power of Hugging Face Transformers.
 
+**Created by Vrishn Viswa Sathyamoorthy**
+
+📧 **Contact:** vrishnviswasathyamoorthy@gmail.com | 📱 **Phone:** +1 (914) 879-5242 | 🐙 **GitHub:** [@KingReaper96420](https://github.com/KingReaper96420)
+
 [![VS Code Marketplace](https://img.shields.io/badge/VS%20Code-Extension-blue?style=for-the-badge&logo=visual-studio-code)](https://marketplace.visualstudio.com/)
-[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/avarayr)
+[![GitHub](https://img.shields.io/badge/GitHub-KingReaper96420-181717?style=for-the-badge&logo=github)](https://github.com/KingReaper96420)
+[![Contact](https://img.shields.io/badge/Contact-Vrishn%20Viswa%20Sathyamoorthy-blue?style=for-the-badge)](mailto:vrishnviswasathyamoorthy@gmail.com)
 
 ## ✨ Features
 
 - 🎙️ **LOCAL VOICE TRANSCRIPTION:** Transcribe your speech directly into the editor using the power of Hugging Face Transformers (Whisper model).
 - 🔒 **IN-BROWSER PROCESSING:** All transcription happens _locally_ in your editor. No data sent to external servers (besides downloading the model initially).
 - 🖱️ **SEAMLESS INTEGRATION:** Native VS Code extension with status bar integration and webview panel.
-- ⌨️ **HOTKEY SUPPORT:** Use `Cmd+Shift+Y` (Mac) or `Ctrl+Shift+Y` (Windows/Linux) to toggle recording.
+ - ⌨️ **HOTKEY SUPPORT:** Use `Cmd+Shift+V` (Mac) or `Ctrl+Shift+V` (Windows/Linux) to toggle recording.
 - 🌍 **MULTI-LANGUAGE:** Support for 60+ languages including auto-detection.
 - ⚙️ **CONFIGURABLE:** Customize language, auto-insertion, and other settings.
 
@@ -29,13 +34,13 @@
 2. **Install via VS Code:**
    - Open Command Palette (`Cmd+Shift+P` or `Ctrl+Shift+P`)
    - Run: `Extensions: Install from VSIX...`
-   - Select the `cursorforspeech-2.0.0.vsix` file
+   - Select the `cursorforspeech-3.0.0.vsix` file
 
 ### Option 3: Build from Source
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/your-username/cursorforspeech.git
+   git clone https://github.com/KingReaper96420/cursorforspeech.git
    cd cursorforspeech
    ```
 
@@ -52,7 +57,7 @@
 
 4. **Install the generated VSIX**
    ```bash
-   code --install-extension cursorforspeech-2.0.0.vsix
+   code --install-extension cursorforspeech-3.0.0.vsix
    ```
 
 ## 🛠️ How to Use
@@ -71,7 +76,11 @@
 - **`Cursor for Speech: Select Voice Recognition Language`** - Choose transcription language
 
 ### Hotkeys
-- `Cmd+Shift+S` (Mac) or `Ctrl+Shift+S` (Windows/Linux) - Toggle recording
+- `Cmd+Shift+V` (Mac) or `Ctrl+Shift+V` (Windows/Linux) - Toggle recording
+
+### Editor Toolbar Mic Button
+- A microphone icon appears in the editor toolbar (top-right) for any text-based editor
+- Click it to start/stop recording; transcription inserts at the cursor position
 
 ### Voice Panel
 Access the full-featured voice panel via:
@@ -152,13 +161,22 @@ We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guid
 
 ## 📝 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License for **Personal Use Only** - see the [LICENSE](LICENSE) file for details.
 
-## ❤️ Support The Project
+**Copyright © 2025 Vrishn Viswa Sathyamoorthy**
+- GitHub: [@KingReaper96420](https://github.com/KingReaper96420)
+- Email: vrishnviswasathyamoorthy@gmail.com
+- Phone: +1 (914) 879-5242
 
-If you find `cursorforspeech` helpful, consider supporting the developer!
+## ❤️ Support The Developer
 
-[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/avarayr)
+If you find `cursorforspeech` helpful, consider supporting Vrishn Viswa Sathyamoorthy!
+
+📧 **Email:** vrishnviswasathyamoorthy@gmail.com  
+📱 **Phone:** +1 (914) 879-5242  
+🐙 **GitHub:** [@KingReaper96420](https://github.com/KingReaper96420)  
+
+⭐ **Star the repository** if you find it useful!
 
 ---
 
@@ -177,4 +195,9 @@ If you were using the previous "Yap for Cursor" extension:
 
 ---
 
-[![Star History Chart](https://api.star-history.com/svg?repos=your-username/cursorforspeech&type=Date)](https://www.star-history.com/#your-username/cursorforspeech&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=KingReaper96420/cursorforspeech&type=Date)](https://www.star-history.com/#KingReaper96420/cursorforspeech&Date)
+
+---
+
+**© 2025 Vrishn Viswa Sathyamoorthy (@KingReaper96420) - All Rights Reserved**  
+*Licensed under MIT License for Personal Use Only*

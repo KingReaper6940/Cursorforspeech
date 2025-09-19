@@ -1,6 +1,9 @@
-# Contributing to Yap for Cursor
+# Contributing to Cursor for Speech
 
-Thank you for your interest in contributing to Yap for Cursor! This document provides guidelines and information for contributors.
+Thank you for your interest in contributing to Cursor for Speech! This document provides guidelines and information for contributors.
+
+**Project Creator:** Vrishn Viswa Sathyamoorthy  
+**Contact:** vrishnviswasathyamoorthy@gmail.com | +1 (914) 879-5242 | [@KingReaper96420](https://github.com/KingReaper96420)
 
 ## 🚀 Getting Started
 
@@ -14,8 +17,8 @@ Thank you for your interest in contributing to Yap for Cursor! This document pro
 
 1. **Fork and Clone**
    ```bash
-   git clone https://github.com/your-username/yap-for-cursor.git
-   cd yap-for-cursor
+   git clone https://github.com/KingReaper96420/cursorforspeech.git
+   cd cursorforspeech
    ```
 
 2. **Install Dependencies**
@@ -134,7 +137,9 @@ docs(readme): update installation instructions
 
 If you discover security vulnerabilities:
 1. **DO NOT** open a public issue
-2. Email the maintainers directly
+2. Contact Vrishn Viswa Sathyamoorthy directly:
+   - Email: vrishnviswasathyamoorthy@gmail.com
+   - Phone: +1 (914) 879-5242
 3. Provide detailed information about the vulnerability
 4. Allow time for the issue to be addressed before disclosure
 
@@ -181,4 +186,9 @@ We especially welcome contributions in these areas:
 - [WebGPU Specification](https://www.w3.org/TR/webgpu/)
 - [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API)
 
-Thank you for contributing to Yap for Cursor! 🎉
+Thank you for contributing to Cursor for Speech! 🎉
+
+---
+
+**© 2025 Vrishn Viswa Sathyamoorthy (@KingReaper96420)**  
+*Licensed under MIT License for Personal Use Only*

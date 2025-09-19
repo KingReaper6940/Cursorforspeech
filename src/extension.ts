@@ -74,7 +74,7 @@ export function activate(context: vscode.ExtensionContext) {
     );
     statusBarItem.command = 'cursorforspeech.toggleRecording';
     statusBarItem.text = '$(mic) Speech';
-    statusBarItem.tooltip = 'Toggle Voice Recording (Cmd+Shift+S)';
+    statusBarItem.tooltip = 'Toggle Voice Recording (Ctrl+Shift+V / Cmd+Shift+V)';
     statusBarItem.show();
 
     // Update status bar based on transcription state
