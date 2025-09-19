@@ -1,0 +1,75 @@
+{
+  "name": "speech-to-text-prompt",
+  "displayName": "Speech to Text Prompt",
+  "description": "Voice-activated prompt writing with speech-to-text transcription",
+  "version": "1.0.0",
+  "publisher": "your-publisher-name",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "speech",
+    "voice",
+    "transcription",
+    "prompt",
+    "whisper",
+    "speech-to-text"
+  ],
+  "activationEvents": [
+    "onCommand:speechToText.startVoicePrompt"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "speechToText.startVoicePrompt",
+        "title": "Start Voice Prompt",
+        "icon": "$(mic)"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "speechToText.startVoicePrompt",
+        "key": "ctrl+shift+v",
+        "mac": "cmd+shift+v"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "speechToText.startVoicePrompt",
+          "when": "editorTextFocus",
+          "group": "navigation"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "speechToText.startVoicePrompt",
+          "when": "editorTextFocus",
+          "group": "1_modification"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "16.x",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "@xenova/transformers": "^2.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/speech-to-text-prompt"
+  },
+  "license": "MIT"
+}
